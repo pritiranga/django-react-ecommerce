@@ -28,7 +28,7 @@ services:
     build: ./frontend
     container_name: react_frontend
     depends_on:
-      -backend
+      - backend
     ports:
       - "7000:7000"
     networks:
