@@ -12,7 +12,9 @@ services:
       - app_network
 
   backend:
-    build: ./backend
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
     container_name: django_backend
     env_file:
       - .env
@@ -25,7 +27,9 @@ services:
 
 
   frontend:
-    build: ./frontend
+    build:
+      context: .
+      dockerfile: frontend.Dockerfile
     container_name: react_frontend
     depends_on:
       - backend
